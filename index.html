@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CoreMC SMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to bottom, #001d3d, #0055aa);
+      color: #e0f7ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Logo in top-left */
+    .logo {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      width: 100px;
+      height: auto;
+      z-index: 10;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 136, 255, 0.7);
+      border: 2px solid #4ecbff;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      color: #4ecbff;
+      text-shadow: 0 0 10px #00aaff;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin-bottom: 1.5em;
+      color: #cbeeff;
+      z-index: 1;
+    }
+
+    .highlight {
+      color: #4ecbff;
+      font-weight: bold;
+    }
+
+    .cta-button {
+      background-color: #1f8cff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 136, 255, 0.5);
+      transition: background-color 0.3s ease, transform 0.2s;
+      z-index: 1;
+    }
+
+    .cta-button:hover {
+      background-color: #0c6ed6;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #a3dfff;
+      z-index: 1;
+    }
+
+    /* Water drip animation */
+    .drip {
+      position: absolute;
+      top: -50px;
+      width: 10px;
+      height: 50px;
+      background: rgba(0, 174, 255, 0.5);
+      border-radius: 50%;
+      animation: drip 4s infinite;
+      z-index: 0;
+    }
+
+    @keyframes drip {
+      0% {
+        transform: translateY(0) scaleX(1);
+        opacity: 1;
+      }
+      90% {
+        transform: translateY(100vh) scaleX(0.5);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    /* Reminder Bar */
+    .reminder {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 136, 255, 0.9);
+      padding: 12px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 5px #000;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.4);
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo image -->
+  <img src="great.jpg" alt="CoreMC Logo" class="logo" />
+
+  <h1>Welcome to <span class="highlight">CoreMC</span></h1>
+
+  <p>The <span class="highlight">best cracked and premium SMP</span> in the world!<br>
+     Experience <strong>less grind</strong> and <strong>more PVP</strong>.<br>
+     Engage in thrilling battles and improve your skills.<br>
+     Friendly community, <span class="highlight">vanilla Aternos SMP</span>.</p>
+
+  <a class="cta-button" href="https://dsc.gg/core-mc" target="_blank">Join the Discord</a>
+
+  <footer>
+    <p><em>Active SMP – DM for Aternos access (start only)</em></p>
+  </footer>
+
+  <!-- Drips -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const drip = document.createElement('div');
+      drip.classList.add('drip');
+      drip.style.left = Math.random() * 100 + 'vw';
+      drip.style.animationDelay = (Math.random() * 5) + 's';
+      drip.style.opacity = Math.random() * 0.5 + 0.3;
+      document.body.appendChild(drip);
+    }
+  </script>
+
+  <!-- Hardcoded Reminder Bar -->
+  <div class="reminder">
+    💧 Don't forget to join the Discord to get started: <a href="https://dsc.gg/core-mc" style="color: #fff; text-decoration: underline;">https://dsc.gg/core-mc</a>
+  </div>
+
+
+    <footer>
+    <p><em>Active SMP – DM for Aternos access (start only)</em></p>
+
+    <div style="
+      margin-top: 20px;
+      background: rgba(0, 68, 136, 0.5);
+      border: 2px solid #4ecbff;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 136, 255, 0.4);
+      display: inline-block;
+    ">
+      <p style="margin: 0; font-weight: bold; font-size: 1.1em; color: #cbeeff;">
+        ELITE: ₹50 / $0.60<br>
+        HERO: ₹100 / $1.20<br>
+        MAFIA: ₹150 / $1.80<br>
+        DIVINE: ₹200 / $2.40<br>
+        MASTER+: ₹250 / $3.00
+      </p>
+    </div>
+  </footer>
+
+
+</body>
+</html>
